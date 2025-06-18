@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الإجابة على الأسئلة العربية</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #0c0c0c;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+        
+        h2 {
+            color: #3498db;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .question-section, .answer-section {
+            margin-bottom: 30px;
+        }
+        
+        .question-box {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            border-right: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            border-top: 1px dashed #ccc;
+            margin: 20px 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            background-color: #e8f4fc;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            flex-basis: 48%;
+            box-sizing: border-box;
+        }
+        
+        .stat-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 5px;
+        }
+        
+        .answer-details {
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        
+        .answer-item {
+            margin-bottom: 8px;
+        }
+        
+        .confidence-meter {
+            height: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .confidence-level {
+            height: 100%;
+            background-color: #2ecc71;
+            width: 59.75%; /* حسب قيمة الثقة في الصورة */
+        }
+        
+        @media (max-width: 600px) {
+            .stat-box {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>نظام الإجابة على الأسئلة العربية</h1>
+        
+        <div class="question-section">
+            <h2>السؤال</h2>
+            <div class="question-box">
+                ما هو أرض كوكي للشمس<br>
+                بزرعة الإجابة
+            </div>
+            
+            <h3>أهداف الصندوق الرئيسي</h3>
+            <p>أكلفة نص شخصي</p>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="answer-section">
+            <h2>العدد</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-title">Question:</div>
+                    <div>1</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-title">Correct length:</div>
+                    <div>587 characters</div>
+                </div>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <h2>العدد</h2>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-title">Query has</div>
+                    <div>185 tokens.</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-title">Segment A (Question) tokens:</div>
+                    <div>7</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-title">Segment B (Correct) tokens:</div>
+                    <div>158</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-title">Answer start positions:</div>
+                    <div>29</div>
+                </div>
+            </div>
+            
+            <div class="answer-details">
+                <div class="answer-item">
+                    <strong>Answer end positions:</strong> 30
+                </div>
+                <div class="answer-item">
+                    <strong>Answer tokens:</strong> "3,947 - Mac"
+                </div>
+                <div class="answer-item">
+                    <strong>Answer:</strong> "2,place"
+                </div>
+                <div class="answer-item">
+                    <strong>Confidence:</strong> 0.5975
+                    <div class="confidence-meter">
+                        <div class="confidence-level"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // يمكنك إضافة وظائف JavaScript هنا عند الحاجة
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('النظام جاهز للعمل');
+            
+            // مثال على وظيفة يمكن إضافتها
+            function updateConfidenceLevel(confidence) {
+                const confidenceLevel = document.querySelector('.confidence-level');
+                confidenceLevel.style.width = (confidence * 100) + '%';
+                
+                // تغيير اللون حسب مستوى الثقة
+                if (confidence < 0.4) {
+                    confidenceLevel.style.backgroundColor = '#e74c3c';
+                } else if (confidence < 0.7) {
+                    confidenceLevel.style.backgroundColor = '#f39c12';
+                } else {
+                    confidenceLevel.style.backgroundColor = '#2ecc71';
+                }
+            }
+            
+            // تعيين مستوى الثقة الأولي من البيانات
+            updateConfidenceLevel(0.5975);
+        });
+    </script>
+</body>
+</html>
