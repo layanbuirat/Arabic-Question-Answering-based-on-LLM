@@ -69,4 +69,4 @@ Download Full Project (ZIP)
 Open in Google Colab
 
 👥 Contributors
-<a href="https://github.com/layanbuirat"> <img src="https://avatars.githubusercontent.com/u/150757130?v=4" width="100" alt="ليان بعيرات"> </a><p align="right">صنع بـ ❤️ بواسطة <a href="https://github.com/layanbuirat">ليان بعيرات</a></p> ```
+<a href="https://github.com/layanbuirat"> <img src="https://avatars.githubusercontent.com/u/150757130?v=4" width="100" alt="ليان بعيرات"> </a><p align="right">صنع بـ ❤️ بواسطة <a href="https://github.com/layanbuirat"> ليان بعيرات ورنا موسى و دانا غنيمات و لمى الخطيب </a></p> ```
