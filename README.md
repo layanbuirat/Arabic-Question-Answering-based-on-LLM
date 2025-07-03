@@ -1,9 +1,10 @@
 # 🌐 Arabic Question Answering System based on LLM
 
 <div align="center">
-  <img src="IMAGE/system-architecture.png" width="600" alt="System Architecture">
   <br>
   <img src="Testing%20for%20the%20system.gif" width="800" alt="System Demo">
+  <br>
+  <img src="presentation.gif" width="800" alt="System Demo">
 </div>
 
 ## 📝 Table of Contents
